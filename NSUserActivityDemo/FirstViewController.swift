@@ -12,14 +12,25 @@ class FirstViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    userActivity = NSUserActivity(activityType: "me.davidjohnson.view-first")
+    userActivity?.title = "View First"
+    
+    userActivity?.eligibleForSearch = true
+    userActivity?.eligibleForHandoff = false
+    userActivity?.eligibleForPublicIndexing = true
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    userActivity?.becomeCurrent()
   }
-
-
+  
+  override func viewDidDisappear(animated: Bool) {
+    super.viewDidDisappear(animated)
+    
+    userActivity?.resignCurrent()
+  }
 }
 

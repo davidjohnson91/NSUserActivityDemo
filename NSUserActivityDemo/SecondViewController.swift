@@ -9,17 +9,63 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  
+  @IBOutlet weak var tableView: UITableView! {
+    didSet {
+      tableView.dataSource = self
+      tableView.delegate = self
+    }
   }
+  
+  let songs: [Song] = [
+    Song(name: "Billion Dollar Babies", artist: "Alice Cooper"),
+    Song(name: "Wolves", artist: "Kanye West"),
+    Song(name: "Sound and Color", artist: "Alabama Shakes")
+  ]
+  
+  var selectedSong: Song!
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  func displaySongDetails(song: Song) {
+    selectedSong = song
+    performSegueWithIdentifier("showSongDetail", sender: nil)
   }
-
-
 }
 
+extension SecondViewController: UITableViewDataSource {
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return songs.count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    var cell = UITableViewCell(style: .Subtitle, reuseIdentifier: nil)
+    
+    let song = songs[indexPath.row]
+    
+    cell.textLabel?.text = song.name
+    cell.detailTextLabel?.text = song.artist
+    
+    cell.accessoryType = .DisclosureIndicator
+    
+    return cell
+  }
+}
+
+extension SecondViewController: UITableViewDelegate {
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    displaySongDetails(songs[indexPath.row])
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    guard segue.identifier == "showSongDetail"
+      else { return }
+    
+    guard let destinationVC = segue.destinationViewController as? SongDetailViewController
+      else { return }
+    
+    destinationVC.song = selectedSong
+  }
+}

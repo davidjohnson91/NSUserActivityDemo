@@ -13,6 +13,8 @@
 		633C5FFA1D67A17B00BF4C10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633C5FF81D67A17B00BF4C10 /* Main.storyboard */; };
 		633C5FFC1D67A17B00BF4C10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633C5FFB1D67A17B00BF4C10 /* Assets.xcassets */; };
 		633C5FFF1D67A17B00BF4C10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633C5FFD1D67A17B00BF4C10 /* LaunchScreen.storyboard */; };
+		633C60071D67A28300BF4C10 /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C60061D67A28300BF4C10 /* SongDetailViewController.swift */; };
+		633C60091D67A32900BF4C10 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C60081D67A32900BF4C10 /* Song.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		633C5FFB1D67A17B00BF4C10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		633C5FFE1D67A17B00BF4C10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		633C60001D67A17B00BF4C10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		633C60061D67A28300BF4C10 /* SongDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDetailViewController.swift; sourceTree = "<group>"; };
+		633C60081D67A32900BF4C10 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				633C5FF41D67A17B00BF4C10 /* FirstViewController.swift */,
 				633C5FF61D67A17B00BF4C10 /* SecondViewController.swift */,
 				633C5FF81D67A17B00BF4C10 /* Main.storyboard */,
+				633C60081D67A32900BF4C10 /* Song.swift */,
+				633C60061D67A28300BF4C10 /* SongDetailViewController.swift */,
 				633C5FFB1D67A17B00BF4C10 /* Assets.xcassets */,
 				633C5FFD1D67A17B00BF4C10 /* LaunchScreen.storyboard */,
 				633C60001D67A17B00BF4C10 /* Info.plist */,
@@ -140,7 +146,9 @@
 			files = (
 				633C5FF71D67A17B00BF4C10 /* SecondViewController.swift in Sources */,
 				633C5FF31D67A17B00BF4C10 /* AppDelegate.swift in Sources */,
+				633C60071D67A28300BF4C10 /* SongDetailViewController.swift in Sources */,
 				633C5FF51D67A17B00BF4C10 /* FirstViewController.swift in Sources */,
+				633C60091D67A32900BF4C10 /* Song.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
