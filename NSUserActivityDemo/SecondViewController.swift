@@ -20,7 +20,8 @@ class SecondViewController: UIViewController {
   let songs: [Song] = [
     Song(name: "Billion Dollar Babies", artist: "Alice Cooper"),
     Song(name: "Wolves", artist: "Kanye West"),
-    Song(name: "Sound and Color", artist: "Alabama Shakes")
+    Song(name: "Sound and Color", artist: "Alabama Shakes"),
+    Song(name: "Death of a Interiour Decorator", artist: "Death Cab for Cutie")
   ]
   
   var selectedSong: Song!

@@ -29,12 +29,7 @@ class SongDetailViewController: UIViewController {
     userActivity?.eligibleForHandoff = false
     userActivity?.eligibleForPublicIndexing = true
     
-    let userInfo = [
-      "songName": song.name,
-      "artistName": song.artist
-    ]
-    
-    userActivity?.addUserInfoEntriesFromDictionary(userInfo)
+    userActivity?.requiredUserInfoKeys = NSSet(array: ["songName", "artistName"]) as! Set<String>
     
     let attributes = CSSearchableItemAttributeSet()
     attributes.title = song.name
@@ -55,4 +50,11 @@ class SongDetailViewController: UIViewController {
     userActivity?.resignCurrent()
   }
   
+  override func updateUserActivityState(activity: NSUserActivity) {
+    userActivity?.addUserInfoEntriesFromDictionary([
+      "songName": song.name,
+      "artistName": song.artist
+      ]
+    )
+  }
 }

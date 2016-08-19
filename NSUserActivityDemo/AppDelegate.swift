@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       return true
       
     case "me.davidjohnson.view-song":
+      
+      tabBar.selectedIndex = 1
+      
       guard let songListVC = tabBar.viewControllers?.last?.childViewControllers.first as? SecondViewController
         else { return false }
       
